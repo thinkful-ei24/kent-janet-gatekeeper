@@ -67,8 +67,11 @@ function gateKeeper(req, res, next) {
   // your code should replace the line below
   const userPass = queryString.parse(req.get('x-username-and-password'));
   console.log(userPass);
+  console.log(userPass.user);
+  //req.user = USERS.find((users)=>{ users.userName === userPass.user && users.password === userPass.pass});
   
   
+  console.log(req.user);
   next();
 }
 
