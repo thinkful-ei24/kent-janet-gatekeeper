@@ -65,6 +65,8 @@ const USERS = [
 //     (aka, `req.user = matchedUser`)
 function gateKeeper(req, res, next) {
   // your code should replace the line below
+  
+  console.log(req.header);
   next();
 }
 
