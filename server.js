@@ -69,12 +69,15 @@ function gateKeeper(req, res, next) {
   console.log(userPass);
   
   //req.user = USERS.find((user)=>{ user.userName === userPass.user});
-  for (let i = 0; i < USERS.length; i++){
-    if(userPass.user === USERS[i].userName && userPass.password === USERS.password){
-    req.user = USERS[i];
-    }
-  }
+  // for (let i = 0; i < USERS.length; i++){
+  //   if(userPass.user === USERS[i].userName && userPass.password === USERS.password){
+  //   req.user = USERS[i];
+  //   }
+  // }
   
+  req.user = USERS.find(function(user) {
+     return user.userName === userPass.user && user.password === userPass.pass;
+  });
 
   console.log(req.user);
   next();
